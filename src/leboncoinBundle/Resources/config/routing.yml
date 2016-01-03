@@ -1,3 +1,40 @@
 leboncoin_init:
     path:  /
     defaults: { _controller: leboncoinBundle:Catalogue:index }
+
+leboncoin_add:
+    path:  /ajout
+    defaults: { _controller: leboncoinBundle:Catalogue:add }
+
+leboncoin_insert:
+    path:  /insert
+    defaults: { _controller: leboncoinBundle:Catalogue:addAnnonce }
+    requirements:
+        _method:  POST 
+
+leboncoin_show:
+    path:  /show
+    defaults: { _controller: leboncoinBundle:Catalogue:showOwnAnnonce }
+
+leboncoin_del_annonce:
+    path:  /remove
+    defaults: { _controller: leboncoinBundle:Catalogue:delAnnonce }
+
+leboncoin_del:
+    path:  /delete
+    defaults: { _controller: leboncoinBundle:Catalogue:del }
+    
+leboncoin_show_annonce:
+    path:  /showannonce/{id}
+    defaults: { _controller: leboncoinBundle:Catalogue:showannonce }
+    requirements:
+        _method:  GET|POST
+    options:
+        expose: true
+        
+leboncoin_show_upload:
+    path:  /showUpload/{id}
+    defaults: { _controller: leboncoinBundle:Catalogue:Upload }
+    requirements:
+        _method:  POST
+    
