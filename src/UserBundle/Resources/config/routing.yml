@@ -1,0 +1,18 @@
+fos_user_security:
+            resource: "routing/security.xml"
+
+fos_user_profile:
+            resource: "routing/profile.xml"
+            prefix: /profile
+
+fos_user_register:
+            resource: "routing/registration.xml"
+            prefix: /register
+
+fos_user_resetting:
+            resource: "routing/resetting.xml"
+            prefix: /resetting
+
+fos_user_change_password:
+            resource: "routing/change_password.xml"
+            prefix: /profile
