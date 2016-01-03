@@ -3,11 +3,59 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+                <link href="{{ asset('bundles/leboncoin/css/style_css1.css') }}" type="text/css" rel="stylesheet" />
+                <link href="{{ asset('bundles/leboncoin/css/jasny-bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+                <link href="{{ asset('bundles/leboncoin/css/bootstrap.css') }}" type="text/css" rel="stylesheet" />
+                <link href="{{ asset('bundles/leboncoin/css/font-awesome.min.css') }}" type="text/css" rel="stylesheet" />
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        {% block header %}
+        <div id="welcome">
+                <h1><span>Leboncoin</span> </h1>
+              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                  <span id="userU">{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</span>
+                 <div class="menu">
+                        <ul id="menu_horizontal">
+
+                        <li><a class="onglet" href={{ path('leboncoin_init') }}>Accueil</a></li>
+                        
+                        <li><a class="onglet" href="#">Mes Annonces</a></li>
+                         
+                        <li><a class="onglet" href="#">Ajouter</a></li>
+
+                        <li><a class="onglet" href="#">Supprimer</a></li>
+
+                        <li><a class="onglet" href={{ path('fos_user_security_logout') }}>Deconnexion</a></li>    
+                        
+                        </ul>
+                </div>
+            {% else %}
+                <div class="menu">
+                        <ul id="menu_horizontal">
+
+                        <li><a class="onglet" href={{ path('leboncoin_init') }}>Accueil</a></li>
+
+                        <li><a class="onglet" href={{ path('fos_user_security_login') }}>Authentification</a></li>
+
+                        <li><a class="onglet" href={{ path('fos_user_registration_register') }}>Inscription</a></li>
+                        
+                        </ul>
+                </div>
+              
+            {% endif %}
+        </div>
+        {% endblock %}
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+                <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+                <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+                <script type="text/javascript" src="{{ asset('bundles/leboncoin/js/jquery.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('bundles/leboncoin/js/jasny-bootstrap.min.js') }}"></script>
+                <script type="text/javascript" src="{{ asset('bundles/leboncoin/js/bootstrap.js') }}"></script>               
+                <script type="text/javascript" src="{{ asset('bundles/leboncoin/js/image.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
