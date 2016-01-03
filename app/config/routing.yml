@@ -1,3 +1,7 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+leboncoin_init:
+    resource: "@leboncoinBundle/Resources/config/routing.yml"
+    prefix:   /
