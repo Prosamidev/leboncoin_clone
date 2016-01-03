@@ -1,30 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div id="wrapper">      
-        {% for ad in ad %}     
-        <div id="container">
-            <div class="annonce"id="{{ad.id}}"></div>
-            <div class="row">
-                <div class="col-md-2">
-                    {{ ad.date|date('Y-m-d') }}
-                    </br>
-                    {{ ad.user.username}}
-                </div>
-                <div class="col-md-4" >
-                    <span> Titre : </span>{{ ad.titre }}
-                    </br>
-                    <span> Description :</span>{{ ad.description }}
-                </div>
-                <div class="col-md-2" >
-                    <span> Prix </span>{{ ad.prix }}
-                </div>
-                <div class="col-md-4">
-                     <img  height="70" widht="70" src= {{ asset(['bundles/leboncoin/image/', ad.images[0].path]|join) }} />                  
-                </div>  
-            </div>
-        </div>
-        {% endfor %}      
-    </div>
+    
  
 {% endblock %}
