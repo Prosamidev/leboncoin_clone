@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+     {% if ad is defined %}
+        {% for ad in ad %} 
+        <div id="Delcontainer">
+            <div class="row" id="{{ad.id}}">
+                <div class="col-md-2">
+                    {{ ad.date|date('Y-m-d') }}
+                    </br>
+                    <span id="username"> {{ ad.user.username}} </span>
+                </div>
+                <div class="col-md-2" >
+                    <span> Titre : </span>{{ ad.titre }}
+                    </br>
+                    <span> Description : </span>{{ ad.description }}
+                </div>
+                <div class="col-md-2" >
+                    <span> Prix </span>{{ ad.prix }}
+                </div>
+                {% for images in ad.images %} 
+                    {% if loop.first %}
+                <div class="col-md-4">
+                     <img  height="70" widht="70" src= {{ asset(['bundles/leboncoin/image/', images.path]|join) }} />                  
+                </div>
+                    {% endif %}
+                {% endfor %}
+                <div class="col-md-2">
+                   <button id="btnDelete" type="button" class="btn btn-info">Supprimer</button>
+                </div>
+            </div>   
+        
+        {% endfor %}
+         {% else %}
+                <h1> Operation terminé </h1>
+         {% endif %}
+
+        </div>
+    </div>
+{% endblock %}
