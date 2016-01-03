@@ -1,0 +1,3 @@
+leboncoin_init:
+    path:  /
+    defaults: { _controller: leboncoinBundle:Catalogue:index }
