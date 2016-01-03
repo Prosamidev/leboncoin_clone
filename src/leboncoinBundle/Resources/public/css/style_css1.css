@@ -1,0 +1,71 @@
+  body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
+  *:before,
+  *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+    }
+    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
+    h1 { font-size: 36px; }
+    h2 { font-size: 21px; margin-bottom: 1em; }
+    p { margin: 0 0 1em 0; }
+    a { color: #0000F0; }
+    a:hover { text-decoration: none; }
+    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
+    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
+    #container { padding: 2em; border-bottom: 3px solid lightgreen;}
+    #container:hover{ background: lightgreen; padding: 2em; border: 3px solid lightblue;}
+    #Delcontainer {padding: 2em; border-bottom: 3px solid lightgreen;}
+    #welcome, #status { margin-bottom: 2em; }
+    #welcome h1 span { display: block; font-size: 75%; }
+    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
+    #icon-book { display: none; }
+    ul#menu_horizontal { width : 600px; height : 30px; margin : 0 0 0 0; padding : 0;
+    background-color : #f4f9fd; border : 1px dashed black; list-style-type : none; }
+    ul#menu_horizontal li { display : inline; padding : 0 0.5em;  line-height : 30px;}
+    ul#menu_horizontal li.onglet { float : left; border-right : 1px dashed black; }
+    ul#menu_horizontal a {color : black; text-decoration : none; padding : 0 0.5em; font :  0.8em "Trebuchet MS";}
+    ul#menu_horizontal a:hover { text-decoration : underline; }
+    ul#menu_horizontal a img { border : none; padding :  0 0.3em;}
+    #userU { font-weight: bold; font :  0.8em "Trebuchet MS";}
+    #plus { 
+        cursor: pointer;
+       
+    }
+    .rotate90 {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    }
+    #username{
+        color : red;
+    }
+    
+    #upload{
+        margin-left :20%;
+        margin-top:-5%;
+    }
+    
+    #plus{
+       margin-left:15%; 
+    }
+    #upload .contentinputchoice{
+        display : inline;
+    }
+    
+    #leboncoinbundle_annoncetype{
+        margin-left: 30%;
+    }
+
+    
+    @media (min-width: 768px) {
+        #wrapper { width: 80%; margin: 2em auto; }
+        #icon-book { display: inline-block; }
+        #status a, #next a { display: block; }
+
+        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
+        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
+    }
